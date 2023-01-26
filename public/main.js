@@ -7,7 +7,6 @@ const scaryFace = () => {
         
     })
     .catch((err) => {
-        // rollbar.error(err)
         console.log(err)
     })
 }

@@ -21,7 +21,7 @@ var rollbar = new Rollbar({
 rollbar.log('Hello world!')
 
 const scaryFace = (req, res) => {
-    
+    rollbar.info('someone hit the big, red button')
     const image = "https://wallpaperaccess.com/full/1615594.jpg"
 
     res.status(200).send(image)
