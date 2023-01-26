@@ -1,5 +1,10 @@
 const express = require('express')
+const cors = require('cors')
+
 const app = express()
+app.use(cors())
+app.use(express.json())
+
 app.listen(4000, () => console.log('server running on port 4000'))
 
 app.use(express.static(`${__dirname}/public`))
@@ -15,10 +20,11 @@ var rollbar = new Rollbar({
 // record a generic message and send it to Rollbar
 rollbar.log('Hello world!')
 
-const scaryFace = () => {
+const scaryFace = (req, res) => {
+    
     const image = "https://wallpaperaccess.com/full/1615594.jpg"
 
-    resizeBy.status(200).send(image)
+    res.status(200).send(image)
 }
 
 app.get("/scary-face", scaryFace)
