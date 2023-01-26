@@ -14,3 +14,11 @@ var rollbar = new Rollbar({
 
 // record a generic message and send it to Rollbar
 rollbar.log('Hello world!')
+
+const scaryFace = () => {
+    const image = "https://wallpaperaccess.com/full/1615594.jpg"
+
+    resizeBy.status(200).send(image)
+}
+
+app.get("/scary-face", scaryFace)
